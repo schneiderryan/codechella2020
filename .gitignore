@@ -1,5 +1,4 @@
 config.py
 __pycache__/
-Twitter_Data.csv
 .env
 node_modules/*
