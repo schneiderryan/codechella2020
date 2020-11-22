@@ -2,11 +2,17 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
+import config
+import tweepy
+auth = tweepy.OAuthHandler(config.consumer_key, config.consumer_secret)
+auth.set_access_token(config.access_token, config.access_token_secret)
+api = tweepy.API(auth)
+
 
 
 def setup():
-    memory_limiter = 140000
-    TweetUrl = 'Twitter_Data.csv'
+    memory_limiter = 0
+    TweetUrl = '../Twitter_Data.csv'
     tweet_dataframe = pd.read_csv(TweetUrl)
 
     wordDict = {}
@@ -108,8 +114,10 @@ def classifyNB(words, logProbWordPresentGivenPositive, logProbWordAbsentGivenPos
 if __name__ == '__main__':
     (logProbWordPresentGivenPositive, logProbWordAbsentGivenPositive, logProbWordPresentGivenNegative,
      logProbWordAbsentGivenNegative, logPriorPositive, logPriorNegative) = setup()
-    print('Enter phrase you want to search for:')
-    tweet = input()
-    classifyNB(tweet, logProbWordPresentGivenPositive, logProbWordAbsentGivenPositive,
-               logProbWordPresentGivenNegative, logProbWordAbsentGivenNegative,
-               logPriorPositive, logPriorNegative)
+    keyword = input("Enter the term you want to search for: ")
+    tweets = api.search(keyword)
+    for tweet in tweets:
+        bayes = classifyNB(tweet.text, logProbWordPresentGivenPositive, logProbWordAbsentGivenPositive,
+                       logProbWordPresentGivenNegative, logProbWordAbsentGivenNegative,
+                       logPriorPositive, logPriorNegative)
+        print(bayes)
