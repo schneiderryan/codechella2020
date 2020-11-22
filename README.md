@@ -24,8 +24,8 @@ The project consists of 3 main parts.
 
 3. The Naive Bayes Network was written in Python and checks occurrences of a word and sentiment of a tweet from a database and uses those to create a "score" for each tweet passed through the network to estimate how positive or negative the tweet is.
 
-## Built With
+## Challenges
 We did face a couple of challenges throughout the project, but none that weren't able to be overcome. The first that came up was the fact that all of us are still students and school was taking time away from the hackathon. The second challenge that we approached was finding times for everyone to meet and work on the project. The last challenge we faced was using brand new technologies and putting them together in one weekend, but that's the beauty in hackathons.
 
-## Challenges
+## Buiilt With
 `python`, `javascript`, `css`, `html`
