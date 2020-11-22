@@ -40,7 +40,7 @@ export default class CustomModal extends Component {
 			  <Input
 				type="text"
 				name="title"
-				value={this.state.activeItem.title}
+				value={this.state.activeItem.title} // use a title of the active item
 				onChange={this.handleChange}
 				placeholder="Enter Todo Title"
 			  />
@@ -50,8 +50,8 @@ export default class CustomModal extends Component {
 			  <Input
 				type="text"
 				name="description"
-				value={this.state.activeItem.description}
-				onChange={this.handleChange}
+				value={this.state.activeItem.description} // uses a description of the active item
+ 				onChange={this.handleChange}
 				placeholder="Enter Todo description"
 			  />
 			</FormGroup>

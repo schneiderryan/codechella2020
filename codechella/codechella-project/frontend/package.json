@@ -8,6 +8,7 @@
     "@testing-library/react": "^11.2.2",
     "@testing-library/user-event": "^12.2.2",
     "bootstrap": "^4.5.3",
+    "canvasjs": "^1.8.3",
     "react-scripts": "4.0.0",
     "reactstrap": "^8.7.1",
     "web-vitals": "^0.2.4"
